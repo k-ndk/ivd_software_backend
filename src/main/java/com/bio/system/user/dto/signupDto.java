@@ -2,7 +2,7 @@ package com.bio.system.user.dto;
 
 import lombok.Getter;
 
-import java.sql.Timestamp;
+import java.time.LocalTime;
 
 @Getter
 public class signupDto {
@@ -10,6 +10,6 @@ public class signupDto {
     String username;
     String userIds;
     String userPw;
-    Timestamp time;
+    LocalTime time;
 
 }

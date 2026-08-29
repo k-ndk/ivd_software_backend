@@ -22,7 +22,7 @@ public class userController {
     @PostMapping("/user/signup")
     public ResponseEntity<String> post(@RequestBody signupDto reqestDto) {
         userService.signup(reqestDto);
-        return new ResponseEntity<String>("success",HttpStatus.OK);
+        return new ResponseEntity<String>("success", HttpStatus.valueOf(201));
     }
 
 }
