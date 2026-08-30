@@ -1,7 +1,7 @@
 package com.bio.system.user.Entity;
 
 
-import com.bio.system.user.dto.signupDto;
+import com.bio.system.user.dto.*;
 import jakarta.persistence.*;
 
 import java.time.LocalTime;
@@ -15,7 +15,7 @@ public class user {
     @Column(name = "userId")
     int userId;
     String userName;
-    String userIds;
+    String userIds; //유저 아이디
     String userPw;
     LocalTime time;
 
@@ -25,7 +25,17 @@ public class user {
         this.userPw = signupDto.getUserPw();
         this.time = now();
         }
+
     public user() {
 
+    }
+
+    public int getUserId() {
+        return userId;
+
+    }
+
+    public String getUserPw() {
+        return userPw;
     }
 }
