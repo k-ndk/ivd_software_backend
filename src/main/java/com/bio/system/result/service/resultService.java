@@ -1,5 +1,6 @@
 package com.bio.system.result.service;
 
+import com.bio.system.common.findId;
 import com.bio.system.result.dto.resultDto;
 import com.bio.system.result.entity.result;
 import com.bio.system.result.repository.resultRepository;
@@ -14,20 +15,16 @@ public class resultService {
 
     private final resultRepository resultRepository;
 
-    private final testRepository testRepository;
+    private final findId findId;
 
-    public resultService(resultRepository resultRepository, testRepository testRepository){
+    public resultService(resultRepository resultRepository, findId findId){
         this.resultRepository = resultRepository;
-        this.testRepository = testRepository;
+        this.findId = findId;
     }
 
-    public tests findTestId(Long testId){
-        tests test = testRepository.findById(testId).get();
-        return test;
-    }
 
     public void result(resultDto resultDto){
-        tests test = findTestId(resultDto.getTestId());
+        tests test = findId.findTestId(resultDto.getTestId());
         result result = new result(resultDto.getResultTime(), resultDto.getScore(), test);
         resultRepository.save(result);
     }

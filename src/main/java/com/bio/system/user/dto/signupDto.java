@@ -2,6 +2,7 @@ package com.bio.system.user.dto;
 
 import lombok.Getter;
 
+import java.sql.Timestamp;
 import java.time.LocalTime;
 
 @Getter
