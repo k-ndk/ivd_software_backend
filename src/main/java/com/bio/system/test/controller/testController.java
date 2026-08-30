@@ -20,7 +20,7 @@ public class testController {
     }
 
     @PostMapping("/start")
-    public ResponseEntity<String>post(@RequestBody startTestReqestDto startTestReqestDto, HttpMethod httpMethod){
+    public ResponseEntity<String>post(@RequestBody startTestReqestDto startTestReqestDto){
         testService.testStart(startTestReqestDto);
         return new ResponseEntity<String>("success", HttpStatus.valueOf(201));
     }

@@ -1,13 +1,16 @@
 package com.bio.system.log.dto;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import java.time.LocalDateTime;
 
-import java.sql.Timestamp;
 
 @Getter
+@AllArgsConstructor
 public class logReqestDto {
-    Timestamp logTime;
+    LocalDateTime logTime;
     String action;
     Long testId;
     Long resultId;
     int userId;
+
 }

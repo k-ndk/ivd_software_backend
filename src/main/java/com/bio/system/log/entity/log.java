@@ -7,24 +7,29 @@ import com.bio.system.user.Entity.user;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
 public class log {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long logId;
-    Timestamp logTime;
+    LocalDateTime logTime;
     String action;
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "test_id_test_id")
     tests testId;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "result_id", nullable = true)
     result resultId;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "user_id_user_id")
     user userId;
 
-    public log(String action, Timestamp logTime, tests testId, result resultId, user userId){
+    public log(String action, LocalDateTime logTime, tests testId, result resultId, user userId){
         this.action = action;
         this.logTime = logTime;
         this.testId = testId;
